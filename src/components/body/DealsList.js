@@ -19,8 +19,8 @@ function DealsList() {
       <div className=" p-2 flex flex-row flex-wrap items-center mb-[3%]  m-auto gap-2">
         <button
           className="border-black font-bold w-fit text-center  text-sm  border rounded-[110px]  pl-5 pr-5 pt-2.5 pb-2.5 inline-block focus:bg-itemBtnHover focus:text-white focus:border-white "
-          autoFocus={true}
           onClick={handleClick}
+          ac
         >
           Gadgets
         </button>
