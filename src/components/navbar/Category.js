@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 import book from "../../assets/NavBar/Categories/Rectangle 1436-5.png";
 import sac from "../../assets/NavBar/Categories/Rectangle 1436-4.png";
@@ -10,10 +10,32 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 
 function Category() {
   const [show, setShow] = useState(false);
-
+  const categoryRef = useRef(null);
   const handleClick = (e) => {
     setShow(!show);
   };
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 990) {
+        setShow(false);
+      }
+    };
+
+    const handleOutsideClick = (event) => {
+      if (categoryRef.current && categoryRef.current.contains(event.target)) {
+      } else {
+        setShow(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      window.removeEventListener("resize", handleResize);
+    };
+  });
 
   const catergoryList = () => {
     return (
@@ -94,6 +116,7 @@ function Category() {
         show ? "active" : ""
       } `}
       onClick={handleClick}
+      ref={categoryRef}
     >
       Category
       {show ? (

@@ -20,7 +20,6 @@ function DealsList() {
         <button
           className="border-black font-bold w-fit text-center  text-sm  border rounded-[110px]  pl-5 pr-5 pt-2.5 pb-2.5 inline-block focus:bg-itemBtnHover focus:text-white focus:border-white "
           onClick={handleClick}
-          ac
         >
           Gadgets
         </button>

@@ -12,21 +12,33 @@ import CategoryList from "./CategoryList";
 function NavBar() {
   const [list, setList] = useState(false);
   const [mobileList, setMobileList] = useState(false);
+  const [pos, setPos] = useState("");
   const buttonRef = useRef(null);
   const categoryRef = useRef(null);
+
   const getData = (dataState) => {
-    console.log(" This is the Data :  " + dataState);
-    setMobileList(dataState);
+    // console.log(dataState);
+    if (Object.hasOwn(dataState, "state")) {
+      // console.log(dataState.state);
+      setMobileList(dataState.state);
+      setPos(dataState.pos);
+      if (!dataState.state) {
+        setPos("");
+      }
+    } else {
+      setPos("null");
+      setMobileList(dataState);
+    }
   };
 
   const hiddenList = () => (
     <ul
       className={`w-[100%] absolute bg-white border  border-white rounded-[10px] min-h-[220px]  flex justify-evenly flex-row flex-wrap  top-0 ${
         mobileList ? "translate-y-[13%] " : "translate-y-[35%] "
-      } -translate-x-[40px] z-[25]  text-center mb`}
+      } -translate-x-[40px] z-[25]  text-center mb ${pos ? "pos" : ""}`}
     >
       <li>
-        <MobileCategory dataState={getData} />
+        <MobileCategory dataState={getData} categoryRef={categoryRef} />
       </li>
       {mobileList && <CategoryList />}
       <li className=" px-2.5 py-[5px]">
@@ -47,6 +59,7 @@ function NavBar() {
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
+      // console.log(categoryRef);
       if (
         buttonRef.current &&
         !buttonRef.current.contains(event.target) &&
@@ -71,8 +84,8 @@ function NavBar() {
         setList(false);
       }
     };
-    // document.addEventListener("mousedown", handleOutsideClick);
-    // window.addEventListener("blur", handleWindowBlur);
+    document.addEventListener("mousedown", handleOutsideClick);
+    window.addEventListener("blur", handleWindowBlur);
     window.addEventListener("resize", handleResize);
 
     return () => {

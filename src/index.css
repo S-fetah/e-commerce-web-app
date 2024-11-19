@@ -817,7 +817,7 @@ body {
   }
 
   .mb {
-    transform: translate(-3%, 10%);
+    transform: translate(-3%, 35%);
     background-color: #fff;
     border-radius: 10px;
     flex-flow: column wrap;
@@ -831,7 +831,9 @@ body {
     max-height: 877px;
     /* height: 877px; */
   }
-
+  .mb.pos {
+    transform: translateY(10%) translateX(-4%);
+  }
   .mb li {
     display: block !important;
     text-align: center;
