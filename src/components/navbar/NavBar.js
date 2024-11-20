@@ -38,9 +38,9 @@ function NavBar() {
       } -translate-x-[40px] z-[25]  text-center mb ${pos ? "pos" : ""}`}
     >
       <li>
-        <MobileCategory dataState={getData} categoryRef={categoryRef} />
+        <MobileCategory dataState={getData} />
       </li>
-      {mobileList && <CategoryList />}
+      {mobileList && <CategoryList categoryRef={categoryRef} />}
       <li className=" px-2.5 py-[5px]">
         <a href="/deals">Deals</a>
       </li>
@@ -59,7 +59,8 @@ function NavBar() {
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      // console.log(categoryRef);
+      // console.log(event.target);
+      // console.log(categoryRef.current);
       if (
         buttonRef.current &&
         !buttonRef.current.contains(event.target) &&
@@ -98,9 +99,9 @@ function NavBar() {
   return (
     <nav className="w-full py-[15px] ">
       <section className="max-w-[1360px] f-full max-h-[82px] flex flex-row m-auto justify-between px-[40px] items-center font-semibold  header relative ">
-        <div className="flex flex-row items-center cursor-pointer  ">
+        <a className="flex flex-row items-center cursor-pointer " href="/">
           <img src={webIcon} alt="Icon" />
-        </div>
+        </a>
 
         <div className="flex flex-row justify-between w-[784px] h-[52px] items-center navlinks">
           <ul className="flex items-center  w-[55%]">
@@ -108,13 +109,13 @@ function NavBar() {
               <Category />
             </li>
             <li className=" px-2.5 py-[5px]">
-              <a href="/deals">Deals</a>
+              <a href="/">Deals</a>
             </li>
             <li className=" px-2.5 py-[5px]">
-              <a href="/news">What's new</a>
+              <a href="/">What's new</a>
             </li>
             <li className=" px-2.5 py-[5px]">
-              <a href="/delivery">Delivery</a>
+              <a href="/">Delivery</a>
             </li>
           </ul>
 

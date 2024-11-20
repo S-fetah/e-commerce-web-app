@@ -11,6 +11,7 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 function Category() {
   const [show, setShow] = useState(false);
   const categoryRef = useRef(null);
+
   const handleClick = (e) => {
     setShow(!show);
   };
@@ -46,65 +47,100 @@ function Category() {
 
         <ul className="list-none grid grid-cols-2 gap-x-7 grid-rows-3 gap-y-7">
           <li className="flex flex-row items-center justify-start pl-1 bg-catColor rounded-lg">
-            <a href="$">
-              <img src={couch} className="mr-3" alt="" />
+            <a
+              href="/"
+              className="flex flex-row items-center justify-start pl-1 bg-catColor rounded-lg"
+            >
+              <span>
+                <img src={couch} className="mr-3" alt="" />
+              </span>
+              <div>
+                <h3 className="font-semibold text-black text-left">Books</h3>
+                <p className="text-[14px] text-[#667]">40 items available</p>
+              </div>
             </a>
-            <div>
-              <h3 className="font-semibold text-black text-left">Books</h3>
-              <p className="text-[14px] text-[#667]">40 items available</p>
-            </div>
           </li>
           <li className="flex flex-row items-center justify-start pl-1 bg-catColor rounded-lg">
-            <a href="$">
-              <img src={sac} className="mr-3" alt="" />
+            <a
+              href="/"
+              className="flex flex-row items-center justify-start pl-1 bg-catColor rounded-lg"
+            >
+              <span>
+                <img src={sac} className="mr-3" alt="" />
+              </span>
+              <div>
+                <h3 className="font-semibold text-black text-left">Agendas</h3>
+                <p className="text-[14px] text-[#667]">40 items available</p>
+              </div>
             </a>
-            <div>
-              <h3 className="font-semibold text-black text-left">Agendas</h3>
-              <p className="text-[14px] text-[#667]">40 items available</p>
-            </div>
-          </li>
-          <li className="flex flex-row items-center justify-start pl-1 bg-catColor rounded-lg">
-            <a href="$">
-              <img src={shoes} className="mr-3" alt="" />
-            </a>
-            <div>
-              <h3 className="font-semibold text-black text-left">
-                Official Documents
-              </h3>
-              <p className="text-[14px] text-[#667]">40 items available</p>
-            </div>
-          </li>
-          <li className="flex flex-row items-center justify-start pl-1 bg-catColor rounded-lg">
-            <a href="$">
-              <img src={casque} className="mr-3" alt="" />{" "}
-            </a>
-            <div>
-              <h3 className="font-semibold text-black text-left">
-                Medical Papers
-              </h3>
-              <p className="text-[14px] text-[#667]">40 items available</p>
-            </div>
           </li>
 
           <li className="flex flex-row items-center justify-start pl-1 bg-catColor rounded-lg">
-            <a href="$">
-              <img src={pc} className="mr-3" alt="" />{" "}
+            <a
+              href="/"
+              className="flex flex-row items-center justify-start pl-1 bg-catColor rounded-lg"
+            >
+              <span>
+                <img src={shoes} className="mr-3" alt="" />
+              </span>
+              <div>
+                <h3 className="font-semibold text-black text-left">
+                  Official Documents
+                </h3>
+                <p className="text-[14px] text-[#667]">40 items available</p>
+              </div>
             </a>
-            <div>
-              <h3 className="font-semibold text-black text-left">Gif Boxes</h3>
-              <p className="text-[14px text-[#667]">40 items available</p>
-            </div>
           </li>
           <li className="flex flex-row items-center justify-start pl-1 bg-catColor rounded-lg">
-            <a href="$" className="text-center">
-              <img src={book} className="w-20" alt="" />{" "}
+            <a
+              href="/"
+              className="flex flex-row items-center justify-start pl-1 bg-catColor rounded-lg"
+            >
+              <span>
+                <img src={casque} className="mr-3" alt="" />{" "}
+              </span>
+              <div>
+                <h3 className="font-semibold text-black text-left">
+                  Medical Papers
+                </h3>
+                <p className="text-[14px] text-[#667]">40 items available</p>
+              </div>
             </a>
-            <div>
-              <h3 className="font-semibold text-left text-black ">
-                Explore Others
-              </h3>
-              <p className="text-[14px] text-[#667]">Des Kda Items available</p>
-            </div>
+          </li>
+
+          <li className="flex flex-row items-center justify-start pl-1 bg-catColor rounded-lg">
+            <a
+              href="/"
+              className="flex flex-row items-center justify-start pl-1 bg-catColor rounded-lg"
+            >
+              <span>
+                <img src={pc} className="mr-3" alt="" />{" "}
+              </span>
+              <div>
+                <h3 className="font-semibold text-black text-left">
+                  Gif Boxes
+                </h3>
+                <p className="text-[14px text-[#667]">40 items available</p>
+              </div>
+            </a>
+          </li>
+          <li className="flex flex-row items-center justify-start pl-1 bg-catColor rounded-lg">
+            <a
+              href="/"
+              className="flex flex-row items-center justify-start pl-1 bg-catColor rounded-lg"
+            >
+              <span href="$" className="text-center">
+                <img src={book} className="w-20" alt="" />{" "}
+              </span>
+              <div>
+                <h3 className="font-semibold text-left text-black ">
+                  Explore Others
+                </h3>
+                <p className="text-[14px] text-[#667]">
+                  Des Kda Items available
+                </p>
+              </div>
+            </a>
           </li>
         </ul>
       </div>

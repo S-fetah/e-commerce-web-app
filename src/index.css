@@ -63,9 +63,7 @@ body {
   .category .list ul li:hover div > h3 {
     color: #4353ff;
   }
-  .category .mlist ul li:hover div > h3 {
-    color: #4353ff;
-  }
+
   .both *:hover {
     cursor: pointer;
     color: #de8f53;
@@ -228,7 +226,13 @@ body {
     transform: scale(1.2);
   }
 }
-
+.mlistitem:hover {
+  div {
+    h3 {
+      color: #4353ff;
+    }
+  }
+}
 @media screen and (max-width: 1415px) {
   .banner .stage {
     height: calc(95% * 0.9) !important;
